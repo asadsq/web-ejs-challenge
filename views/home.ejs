@@ -1,0 +1,18 @@
+<% include partials/header %>
+
+<h1>Home</h1>
+<p> <%= homeDesc %> </p>
+
+<!-- this "post" variable below is just a local iterator for our for loop-->
+<% myPosts.forEach(post => { %>
+
+    <h1> <%= post.title; %> </h1>
+    <p> 
+        <%= post.content.substring(0, 100) + "..."; %> 
+        <a href= "/posts/<%= post.title %>" > Read more </a>
+    </p>
+
+
+<% }); %> 
+
+<% include partials/footer %>
